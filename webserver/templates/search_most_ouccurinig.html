@@ -1,0 +1,13 @@
+{% include "header.html" %}
+
+<div class="container container-body" style="text-align: center; margin-top: 100px;">
+    <div>
+        {% for f in data%}
+            <h4>{{f.facility_name}}</h4>
+            <div>Has Occured: {{f.most_occuring}} times</div>
+        {% endfor %}
+    </div>
+        
+</div>
+
+{% include "footer.html" %}

@@ -1,0 +1,79 @@
+{% include "header.html" %}
+<div class="container container-body">
+   <h1>Custom Search</h1>
+   <!-- search by facility name function  -->
+   <hr>
+   <form method="GET" action="/custom_search_result">
+      <div class="bx--form-item">
+
+                <div 
+                  class="bx--form-item bx--text-input-wrapper">
+                  <label for="text-input-3" class="bx--label">Input county name:</label>
+                  <div class="bx--text-input__field-wrapper">
+                     <input id="text-input-3" type="text" name="county"
+                        class="bx--text-input" placeholder="Input county name">
+                  </div>
+               </div>
+               <br><br>
+
+        <!-- <div 
+            class="bx--form-item bx--text-input-wrapper">
+            <label for="text-input-3" class="bx--label">Input county name:</label>
+            <div class="bx--text-input__field-wrapper">
+            <input id="text-input-3" type="text"
+                class="bx--text-input" placeholder="Input your county name">
+            </div>
+        </div>
+        <br><br> -->
+         <div
+            class="bx--select">
+            <label for="select-id" class="bx--label">Select speciality:</label>
+            <div class="bx--form-item">
+
+            <!-- <input type="text" name="county" placeholder="enter country"> -->
+                <!-- input -->
+               <!-- <div 
+                  class="bx--form-item bx--text-input-wrapper">
+                  <label for="text-input-3" class="bx--label">Text Input label</label>
+                  <div class="bx--text-input__field-wrapper">
+                     <input id="text-input-3" type="text" name="county"
+                        class="bx--text-input" placeholder="Input county name">
+                  </div>
+               </div> -->
+
+               <!-- select -->
+               <div
+                  class="bx--select">
+                  <div class="bx--select-input__wrapper" >
+                     <select id="select-id" class="bx--select-input"name="query">
+                        <!-- <option class="bx--select-option" value=""  disabled selected hidden> -->
+                        {% for m in specialty_data %}
+                        <option class="bx--select-option" value="{{m.speciality}}"> {{m.speciality}} </option>
+                        {% endfor %}
+                        <!-- </option> -->
+                     </select>
+                     <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--select__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path>
+                     </svg>
+                     <!-- <input type="submit" value="search" class="btn btn-primary"> -->
+                  </div>
+                  <br>
+                  <div>
+                     <button
+                        class="bx--btn bx--btn--primary"
+                        type="submit" value="search">
+                     Search
+                     </button>
+                  </div>
+               </div>
+
+
+            </div>
+         </div>
+      </div>
+    </form>
+</div>
+
+<hr>
+</div>
+{% include "footer.html" %}

@@ -1,0 +1,17 @@
+{% include "header.html" %}
+
+<div class="container container-body" style="text-align: center; margin-top: 100px;">
+    <div>
+        {% for f in specialty_data%}
+            <h4>{{f.facility_name}}</h4>
+            <div>Provider ID: {{f.provider_id}}</div>
+            <div>Profession: {{f.profession}}</div>
+            <div>For Medicaid Type: {{f.medicaid_type}}</div>
+            <div><strong>Address: </strong> {{f.street_address}}, {{f.city}}, {{f.state}} {{f.zip_code}}</div>
+            <div><strong>Phone: </strong> {{f.telephone}}</div>
+        {% endfor %}
+    </div>
+        
+</div>
+
+{% include "footer.html" %}

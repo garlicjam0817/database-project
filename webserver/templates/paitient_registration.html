@@ -1,0 +1,52 @@
+{% include "header.html" %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.paitientID.lable() }}
+                    {{ form.paitientID() }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.first_name.lable() }}
+                    {{ form.first_name() }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.last_name.lable() }}
+                    {{ form.last_name() }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.gender.lable() }}
+                    {{ form.gender() }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.address.lable() }}
+                    {{ form.address() }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.date_of_birth.lable() }}
+                    {{ form.date_of_birth() }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.zip_code.lable() }}
+                    {{ form.zip_code() }}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.county.lable() }}
+                    {{ form.county() }}
+                </div>
+            </fieldset>
+            
+            <div class="form-group">
+                {{form.submit(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+{% include "footer.html" %}

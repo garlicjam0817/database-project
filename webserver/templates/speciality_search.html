@@ -1,0 +1,68 @@
+{% include "header.html" %}
+
+<div class="container container-body">
+    <h1>Search by Specialty</h1>
+    
+    <!-- search by facility name function  -->
+    <hr>
+
+    <form method="GET" action="/search_speciality_name">
+
+    <div class="bx--form-item">
+      <div
+        class="bx--select">
+        <label for="select-id" class="bx--label">Search by Specialty</label>
+          <div class="bx--select-input__wrapper" >
+            <select id="select-id" class="bx--select-input"name="query">
+              <!-- <option class="bx--select-option" value=""  disabled selected hidden> -->
+                    {% for m in specialty_data %}
+                        <option class="bx--select-option" value="{{m.speciality}}"> {{m.speciality}} </option>
+                    {% endfor %}
+              <!-- </option> -->
+            </select>
+            <svg focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" class="bx--select__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"></path></svg>
+  
+            <!-- <input type="submit" value="search" class="btn btn-primary"> -->
+
+          </div>
+          <br>
+          <div>
+            <button
+            class="bx--btn bx--btn--primary"
+            type="submit" value="search">
+            Search
+          </button>
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+
+
+    <!-- <form method="GET" action="/search_facility_name">
+        <h4>Search by Facility Name</h4>
+        <select name="query">
+            {% for m in Medicaid_Provider %}
+                <option value="{{m.facility_name}}"> {{m.facility_name}} </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="search" class="btn btn-primary">
+    </form> -->
+
+    <!-- search by id's printing function  -->
+    <hr>
+      <!-- <form method="GET" action="/search_provider_id">
+        <h4>Search by Provider ID: </h4>
+        <select name ="query">
+          {% for p in Medicaid_Provider %}
+            <option value="{{ p.provider_id }}">{{ p.provider_id }}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Search" class="btn btn-primary">
+      </form> -->
+</div>
+
+{% include "footer.html" %}
